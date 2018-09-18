@@ -60,8 +60,8 @@ resource "aws_route_table_association" "public" {
 # t2.micro node with an AWS Tag naming it "HelloWorld"
 
 
-resource "aws_instance" "stuff" {
-  ami           = "${var.ami_id}"
+resource "aws_instance" "main_ec2" {
+  ami           = "${var.OPAL_AMI}"
   instance_type = "t2.micro"
   subnet_id = "${aws_subnet.public_subnet.id}"
 

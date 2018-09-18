@@ -10,9 +10,7 @@ variable "OPAL_ENV" {
 }
 
 variable "OPAL_AMI" {
-    default = {
-        us-west-2 = "ami-6cd6f714" # Amazon Linux
-    }
+    default = "ami-6cd6f714" # Amazon Linux
 }
 
 variable "vpc_cidr" {
