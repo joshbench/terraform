@@ -8,7 +8,7 @@ AWS VPC and EC2 instance using Terraform
 * cd into this repository
 * run `terraform init`
 
-## AWS CLI
+## AWS Credentials
 
 You have two options here: 
 * You can use credentials stored in ~/.aws/credentials on your local machine through aws cli
