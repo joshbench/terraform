@@ -1,12 +1,12 @@
 #AWS
+
 provider "aws" {
   region = "${var.aws_region}"
+  access_key = "${var.aws_access_key}"
+  secret_key = "${var.aws_secret_key}"
   shared_credentials_file = "~/.aws/credentials"
   profile = "default"
 }
-
-    # need variables for key and secret ?????
-
 
 #VPC
 
@@ -37,6 +37,7 @@ resource "aws_route_table" "public" {
     gateway_id = "${aws_internet_gateway.igw.id}"
   }
 }
+
 resource "aws_route_table_association" "public" {
   subnet_id = "${aws_subnet.public_subnet.id}"
   route_table_id = "${aws_route_table.public.id}"
@@ -56,8 +57,8 @@ resource "aws_instance" "main_ec2" {
   }
 }
 
-#OUTPUTS
 
+#OUTPUTS
 
 output "EC2_name_tag" {
   value = "${aws_instance.main_ec2.tags["Name"]}"

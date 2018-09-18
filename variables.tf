@@ -1,6 +1,9 @@
-#variable "aws_access_key" {}
-#variable "aws_secret_key" {}
-#variable "aws_key_path" {}
+variable "aws_access_key" {
+  default = ""
+}
+variable "aws_secret_key" {
+  default = ""
+}
 
 variable "aws_region" {
     default = "us-west-2"
@@ -19,8 +22,4 @@ variable "vpc_cidr" {
 
 variable "public_subnet_cidr" {
     default = "10.0.0.0/24"
-}
-
-variable "private_subnet_cidr" {
-    default = "10.0.1.0/24"
 }
